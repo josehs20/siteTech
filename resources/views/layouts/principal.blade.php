@@ -55,11 +55,14 @@
             </div>
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://web.whatsapp.com/send?phone=5522999238245" target="_blank"><i
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                        href="https://web.whatsapp.com/send?phone=5522999238245" target="_blank"><i
                             class="fab fa-whatsapp fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/alltechsistemas" target="_blanck"><i
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                        href="https://www.facebook.com/alltechsistemas" target="_blanck"><i
                             class="fab fa-facebook-f fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/sistemas_alltech/" target="_blanck"><i
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                        href="https://www.instagram.com/sistemas_alltech/" target="_blanck"><i
                             class="fab fa-instagram fw-normal"></i></a>
                 </div>
             </div>
@@ -76,8 +79,8 @@
                 <h4 class="m-0"><img width="50px" src="img/logo2.png" alt=""></i>&nbsp;&nbsp; All Tech
                     Sistemas</h4>
             </a>
-            <button class="navbar-toggler" onclick="colapsefuncion('navbarCollapse')" type="button" data-bs-toggle="collapse"
-                data-bs-target="">
+            <button class="navbar-toggler" onclick="colapsefuncion('navbarCollapse')" type="button"
+                data-bs-toggle="collapse" data-bs-target="">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="colapseNavBar collapse navbar-collapse" id="navbarCollapse">
@@ -89,27 +92,30 @@
                         somos</a>
                     <a href="{{ route('solucoes') }}"
                         class="nav-item nav-link  {{ Request::segment(1) == 'solucoes' ? 'active' : '' }}">Soluções</a>
-                    <a href="http://www.nfe.fazenda.gov.br/portal/principal.aspx" target="_blank"
-                        class="nav-item nav-link ">Site Sefaz</a>
+
+                    <a href="{{ route('downloads') }}"
+                        class="nav-item nav-link  {{ Request::segment(1) == 'downloads' ? 'active' : '' }}">Downloads</a>
 
                     <div class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" onclick="colapsefuncion('dropPagina')" data-bs-toggle="collapse"
-                            data-bs-target="">Páginas</a>
+                        <a class="nav-link dropdown-toggle" onclick="colapsefuncion('dropPagina')"
+                            data-bs-toggle="collapse" data-bs-target="">Páginas</a>
                         <div class="dropdown-menu m-0" id="dropPagina">
                             <a href="{{ route('index') }}" class="dropdown-item">Início</a>
 
                             <a href="{{ route('quemSomos') }}" class="dropdown-item">Quem Somos</a>
                             <a href="{{ route('solucoes') }}" class="dropdown-item">Soluções</a>
                             <a href="/#faleConoscoFooter" class="dropdown-item">Fale conosco</a>
-                            <a href="{{ route('downloads') }}" class="dropdown-item">Downloads</a>
+  
                             <a href="/#ondeEstamos" class="dropdown-item">Onde estamos</a>
+                            <a href="http://www.nfe.fazenda.gov.br/portal/principal.aspx" target="_blank"
+                                class="dropdown-item">Site Sefaz (Baixar XML)</a>
                         </div>
 
                     </div>
-     
+
                     <div class="nav-item dropdown">
-                        <a  class="nav-link dropdown-toggle" onclick="colapsefuncion('dropSitesVinculados')" data-bs-toggle="collapse"
-                        data-bs-target="">Sites
+                        <a class="nav-link dropdown-toggle" onclick="colapsefuncion('dropSitesVinculados')"
+                            data-bs-toggle="collapse" data-bs-target="">Sites
                             vinculados</a>
                         <div class="dropdown-menu m-0" id="dropSitesVinculados">
                             <a target="_blank" href="http://app.alltechsistemas.com.br/login"
@@ -175,7 +181,7 @@
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="bi bi-envelope-open text-primary me-2"></i>
-                                <p class="mb-0">alltechsistemas@alltech.com</p>
+                                <p class="mb-0">suporte@alltechsistemas.com</p>
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="bi bi-telephone text-primary me-2"></i>
@@ -186,9 +192,11 @@
                                 <a class="btn btn-primary btn-square me-2"
                                     href="https://web.whatsapp.com/send?phone=5522999238245" target="_blank"><i
                                         class="fab fa-whatsapp fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square me-2" href="https://www.facebook.com/alltechsistemas" target="_blanck"><i
+                                <a class="btn btn-primary btn-square me-2"
+                                    href="https://www.facebook.com/alltechsistemas" target="_blanck"><i
                                         class="fab fa-facebook-f fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square" href="https://www.instagram.com/sistemas_alltech/" target="_blanck"><i
+                                <a class="btn btn-primary btn-square"
+                                    href="https://www.instagram.com/sistemas_alltech/" target="_blanck"><i
                                         class="fab fa-instagram fw-normal"></i></a>
                             </div>
                         </div>
@@ -202,7 +210,7 @@
 
                             <div class="link-animated d-flex flex-column justify-content-start">
                                 <a class="text-light mb-2" href="{{ route('quemSomos') }}"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>Quem Somos</a>
+                                        class="bi bi-arrow-right text-primary me-2"></i>Quem somos</a>
                                 <a class="text-light mb-2" href="{{ route('solucoes') }}"><i
                                         class="bi bi-arrow-right text-primary me-2"></i>Soluções</a>
                                 <a class="text-light mb-2" href="/#faleConoscoFooter"><i
@@ -235,15 +243,16 @@
                 </div>
             </div>
         </div>
-      
+
     </div>
     <!-- Footer End -->
 
 
     <!-- Back to Top -->
-    <a style="padding: 18px; !important;" href="https://web.whatsapp.com/send?phone=5522999238245" target="_blank" style="display: block !important" class="btn btn-lg btn-success back-to-top"><i
-        class="fab fa-whatsapp fw-normal" ></i></a>
-       
+    <a style="padding: 18px; !important;" href="https://web.whatsapp.com/send?phone=5522999238245" target="_blank"
+        style="display: block !important" class="btn btn-lg btn-success back-to-top"><i
+            class="fab fa-whatsapp fw-normal"></i></a>
+
 
 </body>
 <!-- JavaScript Libraries -->
