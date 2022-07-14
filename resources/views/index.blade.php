@@ -317,15 +317,15 @@
                             </h5>
                         </div>
                         <div class="col wow zoomIn" data-wow-delay="0.4s">
-                            <a style="font-size: 20px;" class="whatsapp-link"
+                            <a style="font-size: 24px;" class="whatsapp-link"
                                 href="https://web.whatsapp.com/send?phone=5522999238245" target="_blank"><i
-                                    class="fab fa-whatsapp fw-normal text-success me-3"></i>(22) 9.9745-6996
+                                    class="fab fa-whatsapp fw-normal text-success me-3"></i>(22) 99923-8245
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col d-flex justify-content-center">
+                {{-- <div class="col d-flex justify-content-center">
                     <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
                         <form>
                             <div class="row g-3">
@@ -354,7 +354,7 @@
                         {{-- <i class="fa fa-phone-alt text-white"></i> --}}
 
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
     </div>

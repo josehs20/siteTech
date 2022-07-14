@@ -3,49 +3,26 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{-- <meta name="viewport" content="width=device-width, initial-scale=1"> --}}
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta charset="utf-8">
     <title>All Tech Sistemas</title>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Favicon -->
-    {{-- <link href="img/favicon.ico" rel="icon"> --}}
-
-    {{-- <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
-        rel="stylesheet"> --}}
-
-    {{-- <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"> --}}
-
-    {{-- <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet"> --}}
-
-    <!-- Customized Bootstrap Stylesheet -->
-    {{-- <link href="css/bootstrap.min.css" rel="stylesheet"> --}}
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <!-- Template Javascript -->
+    <!-- Template Javascript -->    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ asset('js/adminIndex.js') }}" ></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+   
+    <script src="{{ asset('js/jquery.js') }}" ></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body>
@@ -69,11 +46,12 @@
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Downloads</a>
                             <div class="dropdown-menu">
-                                <a href="{{route('admin_utils')}}" class="dropdown-item">Uteis</a>
+                                <a href="{{route('arquivos_fila_cloud')}}" class="dropdown-item">Arquivos na fila para CLOUD</a>
+                
                                 <div class="dropdown-divider"></div>
                                 <a href="{{route('admin_update_egi')}}" class="dropdown-item">Update EGI</a>
                                 <a href="{{route('admin_diversos')}}" class="dropdown-item">Diversos</a>
-                                <a href="{{route('arquivos_fila_cloud')}}" class="dropdown-item">Arquivos na fila para CLOUD</a>
+                                <a href="{{route('admin_utils')}}" class="dropdown-item">Uteis</a>
                             </div>
                         </li>
                         @endif
@@ -123,4 +101,5 @@
         </main>
 </body>
 
+<script type="text/javascript" src="{{ asset('js/adminIndex.js') }}" ></script>
 </html>

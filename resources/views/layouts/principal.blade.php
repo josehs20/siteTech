@@ -8,26 +8,31 @@
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
-    {{-- <!-- Google Web Fonts -->
+    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
-        rel="stylesheet"> --}}
+        rel="stylesheet">
 
-     <!-- Icon Font Stylesheet -->
+    <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet"> 
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+
+    <script src="{{ asset('js/jquery.js') }}"></script>
+
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body>
@@ -43,18 +48,18 @@
             <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Itaperuna</small>
-                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>(22)999999</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>(22) 99923-8245</small>
                     <small class="text-light"><i
-                            class="fa fa-envelope-open me-2"></i>alltechsistemas@alltech.com</small>
+                            class="fa fa-envelope-open me-2"></i>suporte@alltechsistemas.com</small>
                 </div>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://web.whatsapp.com/send?phone=5522999238245" target="_blank"><i
                             class="fab fa-whatsapp fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/alltechsistemas" target="_blanck"><i
                             class="fab fa-facebook-f fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/sistemas_alltech/" target="_blanck"><i
                             class="fab fa-instagram fw-normal"></i></a>
                 </div>
             </div>
@@ -71,10 +76,11 @@
                 <h4 class="m-0"><img width="50px" src="img/logo2.png" alt=""></i>&nbsp;&nbsp; All Tech
                     Sistemas</h4>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button class="navbar-toggler" onclick="colapsefuncion('navbarCollapse')" type="button" data-bs-toggle="collapse"
+                data-bs-target="">
                 <span class="fa fa-bars"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="colapseNavBar collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
                     <a href="{{ route('index') }}"
                         class="nav-item nav-link {{ Request::segment(1) == '' ? 'active' : '' }}">Página inicial</a>
@@ -85,9 +91,11 @@
                         class="nav-item nav-link  {{ Request::segment(1) == 'solucoes' ? 'active' : '' }}">Soluções</a>
                     <a href="http://www.nfe.fazenda.gov.br/portal/principal.aspx" target="_blank"
                         class="nav-item nav-link ">Site Sefaz</a>
+
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Páginas</a>
-                        <div class="dropdown-menu m-0">
+                        <a class="nav-link dropdown-toggle" onclick="colapsefuncion('dropPagina')" data-bs-toggle="collapse"
+                            data-bs-target="">Páginas</a>
+                        <div class="dropdown-menu m-0" id="dropPagina">
                             <a href="{{ route('index') }}" class="dropdown-item">Início</a>
 
                             <a href="{{ route('quemSomos') }}" class="dropdown-item">Quem Somos</a>
@@ -96,15 +104,19 @@
                             <a href="{{ route('downloads') }}" class="dropdown-item">Downloads</a>
                             <a href="/#ondeEstamos" class="dropdown-item">Onde estamos</a>
                         </div>
+
                     </div>
+     
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sites
+                        <a  class="nav-link dropdown-toggle" onclick="colapsefuncion('dropSitesVinculados')" data-bs-toggle="collapse"
+                        data-bs-target="">Sites
                             vinculados</a>
-                        <div class="dropdown-menu m-0">
+                        <div class="dropdown-menu m-0" id="dropSitesVinculados">
                             <a target="_blank" href="http://app.alltechsistemas.com.br/login"
                                 class="dropdown-item">Dashboard (Consultas)</a>
                             <a target="_blank" href="http://venda.alltechsistemas.com.br/"
-                                class="dropdown-item">Venda Externa</a>
+                                class="dropdown-item">Venda
+                                Externa</a>
                         </div>
                     </div>
                     {{-- <a href="contact.html" class="nav-item nav-link">Fale conosco</a> --}}
@@ -114,8 +126,7 @@
                 @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                         @auth
-                            <a href="{{ url('/home') }}"
-                                class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                            <a href="{{ url('/home') }}" class=" mx-3">Painel</a>
                         @else
                             <a href="{{ route('login') }}" class="btn btn-primary py-2 px-4 ms-3">Área restrita</a>
                             {{-- <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a> --}}
@@ -129,8 +140,8 @@
             </div>
         </nav>
     </div>
-    @yield('conteudo')
 
+    @yield('conteudo')
 
 
     <!-- Footer Start -->
@@ -168,16 +179,16 @@
                             </div>
                             <div class="d-flex mb-2">
                                 <i class="bi bi-telephone text-primary me-2"></i>
-                                <p class="mb-0">(22) 9.9745-6996</p>
+                                <p class="mb-0">(22) 99923-8245</p>
                             </div>
                             <div class="d-flex mt-4">
 
                                 <a class="btn btn-primary btn-square me-2"
                                     href="https://web.whatsapp.com/send?phone=5522999238245" target="_blank"><i
                                         class="fab fa-whatsapp fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square me-2" href="#"><i
+                                <a class="btn btn-primary btn-square me-2" href="https://www.facebook.com/alltechsistemas" target="_blanck"><i
                                         class="fab fa-facebook-f fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square" href="#"><i
+                                <a class="btn btn-primary btn-square" href="https://www.instagram.com/sistemas_alltech/" target="_blanck"><i
                                         class="fab fa-instagram fw-normal"></i></a>
                             </div>
                         </div>
@@ -224,18 +235,20 @@
                 </div>
             </div>
         </div>
+      
     </div>
     <!-- Footer End -->
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i
-            class="bi bi-arrow-up"></i></a>
+    <a style="padding: 18px; !important;" href="https://web.whatsapp.com/send?phone=5522999238245" target="_blank" style="display: block !important" class="btn btn-lg btn-success back-to-top"><i
+        class="fab fa-whatsapp fw-normal" ></i></a>
+       
 
 </body>
 <!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script> --}}
+{{-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> --}}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="lib/wow/wow.min.js"></script>
 <script src="lib/easing/easing.min.js"></script>
 <script src="lib/waypoints/waypoints.min.js"></script>
@@ -248,6 +261,24 @@
     const dataAtual = new Date();
     document.getElementById('footerCopy').innerText = 'Copyright ' + dataAtual.getFullYear() +
         ' All Tech Sistemas Todos Direitos Reservados';
+
+    function colapsefuncion(id) {
+        var colapse = document.getElementById(id);
+        if (!colapse.classList.contains("show")) {
+            console.log(colapse.classList.add("show"));
+        } else {
+            console.log(colapse.classList.remove("show"));
+        }
+    }
+
+    // function teste() {
+    //     var colapse = document.getElementById('dropPagina');
+    //     if (!colapse.classList.contains("show")) {
+    //         console.log(colapse.classList.add("show"));
+    //     } else {
+    //         console.log(colapse.classList.remove("show"));
+    //     }
+    // }
 </script>
 
 </html>

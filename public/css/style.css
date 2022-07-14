@@ -467,9 +467,14 @@ h6,
 
 .back-to-top {
     position: fixed;
-    display: none;
     right: 45px;
     bottom: 45px;
+    z-index: 99;
+}
+
+.buttonFlutuanteWaths{
+    position: fixed;
+    right: 45px;
     z-index: 99;
 }
 
@@ -477,14 +482,14 @@ h6,
     background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
 }
-
+/* 
 .link-animated a {
     transition: .5s;
 }
 
 .link-animated a:hover {
     padding-left: 10px;
-}
+} */
 
 @media (min-width: 767.98px) {
     .footer-about {
