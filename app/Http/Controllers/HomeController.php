@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Session\Session as SessionSession;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if (auth()->user()->perfil == 'administrador') {
+
+            return redirect(route('admin_utils'));
+
+        }else{
+            Auth::logout();
+            Session::flash('false', 'Sem permissão para acessar essa área');
+            return redirect(route('login'));
+        }
     }
 }
