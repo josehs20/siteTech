@@ -28,7 +28,7 @@
                                                     href="{{ route('admin_download', ['caminho' => $caminho, 'nome' => str_replace('downloads/' . $caminho . '/', '', $item)]) }}">
                                                     {{ str_replace('downloads/' . $caminho . '/', '', $item) }}</a>
                                             </td>
-                                            <td style="align-items: center;"><i class="bi bi-cloud-download"></i></td>
+                                            <td style="align-items: center;"><i class="bi-cloud-download"></i></td>
 
                                         </tr>
                                     @endforeach

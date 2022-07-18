@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\PaginasSiteController::class, 'index'])->name('index');
-Route::get('/quem-somos', [\App\Http\Controllers\PaginasSiteController::class, 'quemSomos'])->name('quemSomos');
-Route::get('/solucoes', [\App\Http\Controllers\PaginasSiteController::class, 'solucoes'])->name('solucoes');
-Route::get('/downloads', [\App\Http\Controllers\PaginasSiteController::class, 'downloads'])->name('downloads');
+// Route::get('/quem-somos', [\App\Http\Controllers\PaginasSiteController::class, 'quemSomos'])->name('quemSomos');
+// Route::get('/solucoes', [\App\Http\Controllers\PaginasSiteController::class, 'solucoes'])->name('solucoes');
+// Route::get('/downloads', [\App\Http\Controllers\PaginasSiteController::class, 'downloads'])->name('downloads');
 
 Auth::routes();
 

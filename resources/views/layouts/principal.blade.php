@@ -3,10 +3,13 @@
 
 <head>
     <meta charset="utf-8">
+
+    <meta name="description" content="All Tech Sistemas De Informatica Ltda, empresa de informática">
+    <meta name="author" content="All Tech Sistemas">
+
     <title>All Tech Sistemas</title>
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link rel="icon" href="img/logo2.ico">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,14 +31,36 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 
     <script src="{{ asset('js/jquery.js') }}"></script>
 
     <script src="{{ asset('js/app.js') }}" defer></script>
+
 </head>
 
 <body>
+    <style>
+        .titulo-principal:after {
+            content: '|';
+            margin-left: 5px;
+            opacity: 1;
+            animation: pisca .7s infinite;
+        }
+
+        /* Animação aplicada ao content referente a classe *.titulo-principal* resultando num efeito de cursor piscando. */
+
+        @keyframes pisca {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
     <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -76,36 +101,36 @@
         <nav
             class="{{ Request::segment(1) == 'login' ? 'bg-info ' : '' }}navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
             <a href="{{ route('index') }}" class="navbar-brand p-0">
-                <h4 class="m-0"><img width="50px" src="img/logo2.png" alt=""></i>&nbsp;&nbsp; All Tech
-                    Sistemas</h4>
+                <h4 class="m-0"><img width="50px" src="img/logo2.png" alt=""></i><span
+                        class="titulo-principal" class="mx-2">All
+                        Tech
+                        Sistemas</span> &nbsp;&nbsp; </h4>
             </a>
             <button class="navbar-toggler" onclick="colapsefuncion('navbarCollapse')" type="button"
                 data-bs-toggle="collapse" data-bs-target="">
                 <span class="fa fa-bars"></span>
             </button>
             <div class="colapseNavBar collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="{{ route('index') }}"
-                        class="nav-item nav-link {{ Request::segment(1) == '' ? 'active' : '' }}">Página inicial</a>
-                    <a href="{{ route('quemSomos') }}"
-                        class="nav-item nav-link {{ Request::segment(1) == 'quem-somos' ? 'active' : '' }}">Quem
-                        somos</a>
-                    <a href="{{ route('solucoes') }}"
-                        class="nav-item nav-link  {{ Request::segment(1) == 'solucoes' ? 'active' : '' }}">Soluções</a>
+                <div class="navbar-nav ms-auto py-0" id="navbarCollapseItensActive">
 
-                    <a href="{{ route('downloads') }}"
-                        class="nav-item nav-link  {{ Request::segment(1) == 'downloads' ? 'active' : '' }}">Downloads</a>
+                    <a href="/#inicio" class="nav-item nav-link inicio">Página inicial</a>
+                    <a href="/#quemSomos" class="nav-item nav-link quemSomos">Quem
+                        somos</a>
+                    <a href="/#solucoes" class="nav-item nav-link solucoes">Soluções</a>
+
+                    <a href="/#downloads" class="nav-item nav-link downloads">Downloads</a>
+                    <a href="/#faleConosco" class="nav-item nav-link faleConosco">Contato</a>
 
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" onclick="colapsefuncion('dropPagina')"
                             data-bs-toggle="collapse" data-bs-target="">Páginas</a>
                         <div class="dropdown-menu m-0" id="dropPagina">
-                            <a href="{{ route('index') }}" class="dropdown-item">Início</a>
+                            <a href="/#inicio" class="dropdown-item">Início</a>
 
-                            <a href="{{ route('quemSomos') }}" class="dropdown-item">Quem Somos</a>
-                            <a href="{{ route('solucoes') }}" class="dropdown-item">Soluções</a>
-                            <a href="/#faleConoscoFooter" class="dropdown-item">Fale conosco</a>
-  
+                            <a href="/#quemSomos" class="dropdown-item">Quem Somos</a>
+                            <a href="/#solucoes" class="dropdown-item">Soluções</a>
+                            <a href="/#faleConosco" class="dropdown-item">Fale conosco</a>
+
                             <a href="/#ondeEstamos" class="dropdown-item">Onde estamos</a>
                             <a href="http://www.nfe.fazenda.gov.br/portal/principal.aspx" target="_blank"
                                 class="dropdown-item">Site Sefaz (Baixar XML)</a>
@@ -115,8 +140,7 @@
 
                     <div class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" onclick="colapsefuncion('dropSitesVinculados')"
-                            data-bs-toggle="collapse" data-bs-target="">Sites
-                            vinculados</a>
+                            data-bs-toggle="collapse" data-bs-target="">Sites</a>
                         <div class="dropdown-menu m-0" id="dropSitesVinculados">
                             <a target="_blank" href="http://app.alltechsistemas.com.br/login"
                                 class="dropdown-item">Dashboard (Consultas)</a>
@@ -209,13 +233,14 @@
                             </div>
 
                             <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="{{ route('quemSomos') }}"><i
+                                <a class="text-light mb-2" href="/#inicio"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Início</a>
+                                <a class="text-light mb-2" href="/#quemSomos"><i
                                         class="bi bi-arrow-right text-primary me-2"></i>Quem somos</a>
-                                <a class="text-light mb-2" href="{{ route('solucoes') }}"><i
+                                <a class="text-light mb-2" href="/#solucoes"><i
                                         class="bi bi-arrow-right text-primary me-2"></i>Soluções</a>
-                                <a class="text-light mb-2" href="/#faleConoscoFooter"><i
-                                        class="bi bi-arrow-right text-primary me-2"></i>Fale conosco</a>
-                                <a class="text-light mb-2" href="{{ route('downloads') }}"><i
+
+                                <a class="text-light mb-2" href="/#downloads"><i
                                         class="bi bi-arrow-right text-primary me-2"></i>Downloads</a>
                                 <a class="text-light mb-2" href="/#ondeEstamos"><i
                                         class="bi bi-arrow-right text-primary me-2"></i>Onde estamos</a>
@@ -279,15 +304,55 @@
             console.log(colapse.classList.remove("show"));
         }
     }
+    $(function() {
+        var navAll = document.getElementById('divs').children //activ
+        // guardamos todas as distancias de cada secção até ao todo da página e respetivo id
+        var visivel = false
+        var elementos = document.getElementById('navbarCollapseItensActive').querySelectorAll('a')
+        document.onscroll = function() {
+            var p = window.pageYOffset
 
-    // function teste() {
-    //     var colapse = document.getElementById('dropPagina');
-    //     if (!colapse.classList.contains("show")) {
-    //         console.log(colapse.classList.add("show"));
-    //     } else {
-    //         console.log(colapse.classList.remove("show"));
-    //     }
-    // }
+            if (p <= 1900) {
+                removeActive(elementos)
+                document.querySelector('.inicio').classList.add('active')
+            } else if (p <= 2500) {
+                removeActive(elementos)
+                document.querySelector('.quemSomos').classList.add('active')
+            } else if (p <= 3600) {
+                removeActive(elementos)
+                document.querySelector('.solucoes').classList.add('active')
+            } else if (p <= 4100) {
+                removeActive(elementos)
+                document.querySelector('.downloads').classList.add('active')
+            } else {
+                removeActive(elementos)
+            }
+        }
+    })
+
+    function removeActive(elementos) {
+        elementos.forEach(element => {
+            element.classList.remove('active');
+        });
+    }
+    // var elemento = document.querySelector('.titulo-principal')
+    // console.log(elemento);
+
+    function typeWrite(elemento) {
+        const textoArray = elemento.innerHTML.split('');
+        elemento.innerHTML = ' ';
+        textoArray.forEach(function(letra, i) {
+
+            setTimeout(function() {
+                elemento.innerHTML += letra;
+            }, 40 * i)
+            //console.log(i);
+        });
+
+    }
+
+    const titulo = document.querySelector('.titulo-principal');
+    typeWrite(titulo);
 </script>
 
 </html>

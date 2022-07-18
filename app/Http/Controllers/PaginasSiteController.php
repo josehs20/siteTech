@@ -10,18 +10,4 @@ class PaginasSiteController extends Controller
     {
         return view('index');
     }
-
-    public function quemSomos()
-    {
-        return view('quem-somos');
-    }
-
-    public function solucoes()
-    {
-       return view('solucoes');
-    }
-    public function downloads()
-    {
-        return view('downloads');
-    }
 }

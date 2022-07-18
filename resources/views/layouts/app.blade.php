@@ -15,6 +15,7 @@
     <link href="css/style.css" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap-icons.css') }}" rel="stylesheet">
     <!-- Template Javascript -->    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
@@ -46,7 +47,7 @@
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Downloads</a>
                             <div class="dropdown-menu">
-                                <a href="{{route('arquivos_fila_cloud')}}" class="dropdown-item">Arquivos na fila para CLOUD</a>
+                                <a href="{{route('arquivos_fila_cloud')}}" class="dropdown-item">Arquivos na fila para CLOUD <br>/Upload</a>
                 
                                 <div class="dropdown-divider"></div>
                                 <a href="{{route('admin_update_egi')}}" class="dropdown-item">Update EGI</a>
@@ -100,6 +101,5 @@
             @yield('content')
         </main>
 </body>
-
 <script type="text/javascript" src="{{ asset('js/adminIndex.js') }}" ></script>
 </html>

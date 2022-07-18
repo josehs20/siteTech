@@ -1,6 +1,5 @@
 @extends('layouts.principal')
 @section('conteudo')
-    @include('inc.carousel')
 
     <div style="width: 100%;">
         <div class="container">
